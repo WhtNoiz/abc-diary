@@ -2,7 +2,7 @@
 
 A private, browser-based emotion diary built around the ABC model from Cognitive Behavioural Therapy. Identify your emotions, fill in the structured form, and export a clean PDF to share with your therapist.
 
-🔗 **Live:** _coming soon_
+🔗 **Live:** [abc-diary.vercel.app](https://abc-diary.vercel.app)
 
 ---
 
