@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+html, body, #root {
+  min-height: 100%;
+  overflow-x: hidden;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* ── Fluid font sizes (slightly larger on wide screens) ── */
+:root {
+  --fs-xs:   clamp(9px,  0.65vw, 11px);
+  --fs-sm:   clamp(11px, 0.82vw, 13px);
+  --fs-base: clamp(12px, 0.9vw,  14px);
+  --fs-lg:   clamp(15px, 1.1vw,  18px);
+  --fs-xl:   clamp(20px, 1.55vw, 25px);
+}
+
+/* ── Theme variables ── */
+.theme-dark {
+  color-scheme: dark;
+  --bg:                #1F2937;
+  --text-main:         #F9FAFB;
+  --text-muted:        #D1D5DB;
+  --text-dim:          #6B7280;
+  --input-bg:          #111827;
+  --input-border:      #374151;
+  --input-border-focus:#FF4D4D;
+  --input-text:        #F9FAFB;
+  --accent-bg:         #FF4D4D;
+  --accent-text:       #FFFFFF;
+  --btn-border:        #374151;
+  --btn-border-dim:    #2D3748;
+  --header-border:     #374151;
+  --saved-bg:          #283141;
+  --gradient:          radial-gradient(ellipse at 50% 56%, rgba(255,77,77,0.06) 0%, transparent 60%);
+}
+
+.theme-light {
+  color-scheme: light;
+  --bg:                #F9FAFB;
+  --text-main:         #1F2937;
+  --text-muted:        #4B5563;
+  --text-dim:          #9CA3AF;
+  --input-bg:          #FFFFFF;
+  --input-border:      #E5E7EB;
+  --input-border-focus:#BD0000;
+  --input-text:        #1F2937;
+  --accent-bg:         #BD0000;
+  --accent-text:       #FFFFFF;
+  --btn-border:        #E5E7EB;
+  --btn-border-dim:    #F3F4F6;
+  --header-border:     #E5E7EB;
+  --saved-bg:          #F3F4F6;
+  --gradient:          radial-gradient(ellipse at 50% 56%, rgba(189,0,0,0.04) 0%, transparent 60%);
+}
+
+/* ── Bloom animation (secondary/tertiary rings mount from center) ── */
+@keyframes ring-bloom {
+  from { transform: scale(0.05); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+.ring-bloom {
+  transform-origin: 0px 0px;
+  animation: ring-bloom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Placeholder colors ── */
+.theme-dark  input::placeholder,
+.theme-dark  textarea::placeholder { color: #6B7280; }
+.theme-light input::placeholder,
+.theme-light textarea::placeholder { color: #9CA3AF; }
+
+/* ── Date input icon in light mode ── */
+.theme-light input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(0.6); }
+
+/* ── Button press effect ── */
+button {
+  transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.15s ease,
+              background-color 0.15s ease,
+              color 0.15s ease,
+              border-color 0.15s ease;
+}
+button:active {
+  transform: scale(0.91);
+  transition: transform 0.07s ease;
+}
