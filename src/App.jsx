@@ -13,6 +13,7 @@ import { useTranslation }        from './hooks/useTranslation'
 import { useSEO }                from './hooks/useSeo'
 import { usePerformanceMetrics } from './hooks/usePerformanceMetrics'
 import PerformanceOverlay        from './components/ui/PerformanceOverlay'
+import { Analytics } from '@vercel/analytics/react';
 
 function MainPage({ darkMode, setDarkMode }) {
   const navigate   = useNavigate()
@@ -33,6 +34,7 @@ function MainPage({ darkMode, setDarkMode }) {
       className={`flex flex-col w-full min-h-screen overflow-x-hidden ${darkMode ? 'theme-dark' : 'theme-light'}`}
       style={{ background: 'var(--bg)', transition: 'background 0.3s ease' }}
     >
+      <Analytics />
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {name && surname && (
