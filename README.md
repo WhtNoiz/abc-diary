@@ -39,7 +39,7 @@ All data is stored in memory only and cleared when the page is closed. The only 
 
 ```bash
 git clone https://github.com/WhtNoiz/diario-abc.git
-cd diario-abc
+cd abc-diary
 npm install
 npm run dev
 ```
