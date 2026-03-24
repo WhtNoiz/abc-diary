@@ -2,40 +2,44 @@
 
 🇮🇹 [Leggi in italiano](README.it.md)
 
+---
+
 A private, browser-based emotion diary built around the ABC model from Cognitive Behavioural Therapy. Identify your emotions, fill in the structured form, and export a clean PDF to share with your therapist.
 
-🔗 **Live:** [abc-diary.vercel.app](https://abc-diary.vercel.app)
+🔗 Live: **abc-diary.vercel.app**
 
----
+## Screenshots
+
+| Emotion Wheel | Bubble View |
+|:---:|:---:|
+| ![Emotion Wheel](docs/wheel-en.png) | ![Bubble View](docs/bubble-en.png) |
 
 ## Overview
 
 The app follows the three-section CBT structure:
 
-- **A — Situation** — what happened, when, where, and with whom
-- **B — Thoughts** — what went through your mind
-- **C — Consequences** — how you felt, what you did, and what you wish you had done differently
+* **A — Situation** — what happened, when, where, and with whom
+* **B — Thoughts** — what went through your mind
+* **C — Consequences** — how you felt, what you did, and what you wish you had done differently
 
-An interactive **Emotion Wheel** guides you from a broad emotion to a precise one across three levels, helping you articulate feelings that are otherwise hard to name.
+Two views are available to identify your emotion:
 
----
+**Emotion Wheel** — A circular chart with three concentric rings. The innermost ring shows broad emotion categories (Angry, Happy, Sad…). Each click moves outward to progressively more specific emotions, until you reach the most precise description of what you are feeling.
+
+**Bubble View** — The six core emotions are displayed as coloured bubbles. Tapping a bubble expands it into its sub-emotions, each shown as a smaller bubble of the same colour. Once you select one, a 1–10 intensity slider lets you rate how strongly you feel it.
 
 ## Features
 
-- Interactive Emotion Wheel with three-ring hierarchy
-- Bubble view
-- Light and dark mode
-- Italian and English
-- One-click PDF export
-- Fully private — no backend, no tracking, no data leaves your device
-
----
+* Interactive Emotion Wheel with three-ring hierarchy
+* Bubble view with drill-down navigation and intensity rating
+* Light and dark mode
+* Italian and English
+* One-click PDF export
+* Fully private — no backend, no tracking, no data leaves your device
 
 ## Privacy
 
-All data is stored in memory only and cleared when the page is closed. The only persistent data is a language preference saved to localStorage. Nothing is transmitted externally.
-
----
+All data is stored in memory only and cleared when the page is closed. The only persistent data is a language preference saved to `localStorage`. Nothing is transmitted externally.
 
 ## Running Locally
 
@@ -46,10 +50,6 @@ npm install
 npm run dev
 ```
 
----
-
 ## License
 
-© 2026 WhtNoiz — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-
----
+© 2026 WhtNoiz — **CC BY 4.0**
