@@ -12,16 +12,7 @@ const C = {
   headerTxt: [245, 245, 248],
 }
 
-/**
- * Build and (optionally) save a PDF summary of the emotion diary.
- *
- * @param {object}   state          Full Zustand store snapshot.
- * @param {object}   [opts]
- * @param {boolean}  [opts.preview] When true, returns a blob URL instead of
- *                                  triggering a file download.
- * @param {function} [t]            Translation function from useTranslation().
- * @returns {string | undefined}    Blob URL when preview=true, else void.
- */
+
 export default function generatePDF(state, { preview = false } = {}, t = (k) => k) {
   const { name, surname, date, situationValues, thoughts, savedEmotions, conseqValues } = state
   const doc = new jsPDF({ unit: 'mm', format: 'a4' })
@@ -50,10 +41,25 @@ export default function generatePDF(state, { preview = false } = {}, t = (k) => 
   }
 
   const gap  = (n = 4) => { y += n }
+
   const rule = () => {
     doc.setDrawColor(...C.rule)
     doc.line(lm, y, lm + W, y)
     y += 6
+  }
+
+  const footer = () => {
+    const totalPages = doc.internal.getNumberOfPages()
+    for (let i = 1; i <= totalPages; i++) {
+      doc.setPage(i)
+      doc.setDrawColor(...C.rule)
+      doc.line(lm, 285, lm + W, 285)
+      doc.setFontSize(8)
+      doc.setFont('helvetica', 'normal')
+      doc.setTextColor(...C.muted)
+      doc.text('abc-diary.vercel.app', lm, 291)
+      doc.text(`${i} / ${totalPages}`, lm + W, 291, { align: 'right' })
+    }
   }
 
   const titleBar = () => {
@@ -125,6 +131,8 @@ export default function generatePDF(state, { preview = false } = {}, t = (k) => 
       gap(1)
     }
   }
+
+  footer()
 
   if (preview) return doc.output('bloburl')
   doc.save(`diario-emozioni-${name}-${surname}-${formatDate(date).replace(/ /g, '')}.pdf`)
