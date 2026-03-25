@@ -10,7 +10,7 @@ const Privacy = () => {
           href="https://github.com/WhtNoiz/abc-diary"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 rounded-xl text-[14px] font-semibold text-white"
+          className="flex items-center gap-2 px-8 py-3 rounded-full text-[13px] font-bold tracking-wide cursor-pointer transition-opacity hover:opacity-80 text-white"
           style={{ background: '#000', fontFamily: "'Manrope', sans-serif" }}
         >
           <svg height="18" width="18" viewBox="0 0 16 16" fill="white" aria-hidden="true">
