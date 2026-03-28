@@ -6,7 +6,7 @@
  
 Un diario delle emozioni privato, interamente nel browser, costruito attorno al modello ABC della Terapia Cognitivo-Comportamentale. Identifica le tue emozioni, compila il modulo strutturato ed esporta un PDF pulito da condividere con il tuo terapeuta.
  
-🔗 Live: **abc-diary.vercel.app**
+🔗 Live: [**abc-diary.vercel.app**](https://abc-diary.vercel.app)
  
 ## Schermate
  
