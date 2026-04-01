@@ -105,7 +105,7 @@ const it = {
   em_spensierato: 'Spensierato', em_vivace: 'Vivace', em_scherzoso: 'Scherzoso',
   em_triste: 'Triste', em_ferito: 'Ferito', em_imbarazzato: 'Imbarazzato',
   em_abbattuto: 'Abbattuto', em_ignorato: 'Ignorato', em_svuotato: 'Svuotato',
-  em_colpevole: 'Colpevole', em_vergognoso: 'Vergognoso', em_pentito: 'Pentito',
+  em_colpevole: 'Colpevole', em_vergognoso: 'Vergognoso', em_vergognato: 'Vergognato', em_pentito: 'Pentito',
   em_disperato: 'Disperato', em_straziato: 'Straziato',
   em_vulnerabile: 'Vulnerabile', em_fragile: 'Fragile', em_maltrattato: 'Maltrattato',
   em_solo: 'Solo', em_abbandonato: 'Abbandonato', em_isolato: 'Isolato',

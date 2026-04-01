@@ -105,7 +105,7 @@ const en = {
   em_spensierato: 'Carefree', em_vivace: 'Lively', em_scherzoso: 'Playful',
   em_triste: 'Sad', em_ferito: 'Hurt', em_imbarazzato: 'Embarrassed',
   em_abbattuto: 'Downcast', em_ignorato: 'Ignored', em_svuotato: 'Drained',
-  em_colpevole: 'Guilty', em_vergognoso: 'Ashamed', em_pentito: 'Remorseful',
+  em_colpevole: 'Guilty', em_vergognoso: 'Ashamed', em_vergognato: 'Ashamed', em_pentito: 'Remorseful',
   em_disperato: 'Desperate', em_straziato: 'Anguished',
   em_vulnerabile: 'Vulnerable', em_fragile: 'Fragile', em_maltrattato: 'Mistreated',
   em_solo: 'Lonely', em_abbandonato: 'Abandoned', em_isolato: 'Isolated',
