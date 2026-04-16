@@ -113,7 +113,7 @@ const en = {
   em_eccitato: 'Excited', em_energico: 'Energetic', em_impaziente: 'Impatient',
   em_stupito: 'Amazed', em_sbalordito: 'Astonished', em_meravigliato: 'Awestruck',
   em_allarmato: 'Alarmed', em_costernato: 'Dismayed', em_scioccato: 'Shocked',
-
+  em_vuoto: 'Empty',
   // PDF content
   pdfTitle:            'EMOTION DIARY',
   pdfDate:             'Date',

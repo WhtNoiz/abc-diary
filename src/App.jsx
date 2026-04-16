@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import EmotionWheel   from './components/EmotionWheel'
+import { Routes, Route } from 'react-router-dom'
 import EmotionBubbles from './components/EmotionBubbles'
 import Name           from './components/NameAndDate'
 import Situation      from './components/Situation'
@@ -16,7 +15,6 @@ import PerformanceOverlay        from './components/ui/PerformanceOverlay'
 import { Analytics } from '@vercel/analytics/react';
 
 function MainPage({ darkMode, setDarkMode }) {
-  const navigate   = useNavigate()
   const [isDesktop, setIsDesktop] = useState(() => window.innerWidth >= 768)
   const name    = useEmotionsStore((s) => s.name)
   const surname = useEmotionsStore((s) => s.surname)
@@ -59,7 +57,7 @@ function MainPage({ darkMode, setDarkMode }) {
               <Thougts />
             </div>
             <div className="flex flex-col overflow-y-auto h-full">
-              <EmotionBubbles darkMode={darkMode} onViewWheel={() => navigate('/wheel')} />
+              <EmotionBubbles darkMode={darkMode} />
             </div>
           </div>
         </div>
@@ -68,7 +66,7 @@ function MainPage({ darkMode, setDarkMode }) {
           <Name />
           <Situation />
           <Thougts />
-          <EmotionBubbles darkMode={darkMode} onViewWheel={() => navigate('/wheel')} />
+          <EmotionBubbles darkMode={darkMode} />
         </div>
       )}
 
@@ -78,38 +76,13 @@ function MainPage({ darkMode, setDarkMode }) {
   )
 }
 
-function WheelPage({ darkMode, setDarkMode, wheelSize, setWheelSize }) {
-  const navigate = useNavigate()
-
-  return (
-    <div
-      className={`flex flex-col w-full min-h-screen ${darkMode ? 'theme-dark' : 'theme-light'}`}
-      style={{ background: 'var(--bg)', transition: 'background 0.3s ease' }}
-    >
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} onBack={() => navigate(-1)} />
-
-      <div className="flex flex-col flex-1 min-h-0">
-        <EmotionWheel
-          darkMode={darkMode}
-          showFullWheel={true}
-          forceOpen={true}
-          wheelSize={wheelSize}
-          setWheelSize={setWheelSize}
-        />
-      </div>
-    </div>
-  )
-}
-
 function App() {
-  const [darkMode, setDarkMode]   = useState(true)
-  const [wheelSize, setWheelSize] = useState(0)
+  const [darkMode, setDarkMode] = useState(true)
   useSEO()
 
   return (
     <Routes>
-      <Route path="/"      element={<MainPage  darkMode={darkMode} setDarkMode={setDarkMode} />} />
-      <Route path="/wheel" element={<WheelPage darkMode={darkMode} setDarkMode={setDarkMode} wheelSize={wheelSize} setWheelSize={setWheelSize} />} />
+      <Route path="/" element={<MainPage darkMode={darkMode} setDarkMode={setDarkMode} />} />
     </Routes>
   )
 }

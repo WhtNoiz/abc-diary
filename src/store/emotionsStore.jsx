@@ -46,7 +46,7 @@ const useEmotionsStore = create((set, get) => ({
     coreId: emotion.id,
     secIdx: null,
     terIdx: null,
-    step: 'secondary',
+    step: emotion.children.length === 0 ? 'done' : 'secondary',
     selectedEmotion: { id: emotion.id, label: emotion.label },
   }),
 
@@ -74,7 +74,11 @@ const useEmotionsStore = create((set, get) => ({
     const { step, coreId, secIdx } = get()
     if (step === 'done') {
       const emotion = EMOTIONS.find((e) => e.id === coreId)
-      const child   = emotion.children[secIdx]
+      if (!emotion || emotion.children.length === 0) {
+        set({ coreId: null, step: 'core', selectedEmotion: null })
+        return
+      }
+      const child = emotion.children[secIdx]
       set({ terIdx: null, step: 'tertiary', selectedEmotion: { id: child.id, label: child.label } })
     }
     if (step === 'tertiary') {
@@ -83,21 +87,6 @@ const useEmotionsStore = create((set, get) => ({
     }
     if (step === 'secondary') {
       set({ coreId: null, step: 'core', selectedEmotion: null })
-    }
-  },
-
-  jumpTo: (emIdx, ciIdx, giIdx) => {
-    const em = EMOTIONS[emIdx]
-    if (giIdx !== null && giIdx !== undefined) {
-      const child = em.children[ciIdx]
-      set({ coreId: em.id, secIdx: ciIdx, terIdx: giIdx, step: 'done',
-        selectedEmotion: { id: child.children[giIdx].id, label: child.children[giIdx].label } })
-    } else if (ciIdx !== null && ciIdx !== undefined) {
-      set({ coreId: em.id, secIdx: ciIdx, terIdx: null, step: 'tertiary',
-        selectedEmotion: { id: em.children[ciIdx].id, label: em.children[ciIdx].label } })
-    } else {
-      set({ coreId: em.id, secIdx: null, terIdx: null, step: 'secondary',
-        selectedEmotion: { id: em.id, label: em.label } })
     }
   },
 

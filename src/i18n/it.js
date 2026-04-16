@@ -113,6 +113,7 @@ const it = {
   em_eccitato: 'Eccitato', em_energico: 'Energico', em_impaziente: 'Impaziente',
   em_stupito: 'Stupito', em_sbalordito: 'Sbalordito', em_meravigliato: 'Meravigliato',
   em_allarmato: 'Allarmato', em_costernato: 'Costernato', em_scioccato: 'Scioccato',
+   em_vuoto: 'Vuoto',
 
   // PDF content
   pdfTitle:            'DIARIO DELLE EMOZIONI',

@@ -125,7 +125,7 @@ function Bubble({ dx, dy, pushDx = 0, pushDy = 0, r, fill, textColor, label, opa
 const CONSEQ_IDS = ['sensazioni', 'fatto', 'voluto', 'nonVoluto']
 
 
-export default function EmotionBubbles({ darkMode = true, onViewWheel }) {
+export default function EmotionBubbles({ darkMode = true }) {
 
   // Granular selectors — each re-renders only when its slice changes
   const step  = useEmotionsStore((s) => s.step)
@@ -161,9 +161,9 @@ export default function EmotionBubbles({ darkMode = true, onViewWheel }) {
   const secEm  = coreEm && secIdx !== null ? coreEm.children[secIdx] : null
 
   // Orbit radii scale with container width
-  const cOrbitR = Math.min(cw * 0.30, 220)
-  const sOrbitR = Math.min(cw * 0.33, 245)
-  const tOrbitR = Math.min(cw * 0.30, 220)
+  const cOrbitR = Math.min(cw * 0.35, 255)
+  const sOrbitR = Math.min(cw * 0.38, 280)
+  const tOrbitR = Math.min(cw * 0.35, 255)
 
   const cPos = useMemo(() => orbit(EMOTIONS.length, cOrbitR), [cOrbitR])
   const sPos = useMemo(() => coreEm ? orbit(coreEm.children.length, sOrbitR) : [], [coreEm, sOrbitR])
@@ -194,6 +194,11 @@ export default function EmotionBubbles({ darkMode = true, onViewWheel }) {
     if (step === 'secondary') {
       if (isSelected) return { dx: 0, dy: 0, r: r + 6 * bScale, opacity: 1, z: 3 }
       return { dx: cPos[i].dx, dy: cPos[i].dy, r, opacity: 0, z: 1 }
+    }
+    // step === 'tertiary' or 'done'
+    // childless emotion: keep it centred and visible at the done step
+    if (step === 'done' && isSelected && em.children.length === 0) {
+      return { dx: 0, dy: 0, r: r + 6 * bScale, opacity: 1, z: 3 }
     }
     return { dx: 0, dy: 0, r, opacity: 0, z: 1 }
   }
@@ -239,26 +244,6 @@ export default function EmotionBubbles({ darkMode = true, onViewWheel }) {
           {t('wheelTitle')}
         </h1>
       </div>
-
-      {/* ── Wheel hint (only at core step) ── */}
-      {step === 'core' && onViewWheel && (
-        <p className="text-center text-[11px] mb-3 px-4"
-          style={{ fontFamily: "'Manrope', sans-serif", color: 'var(--text-dim)', lineHeight: 1.6 }}>
-          {t('wheelHint')}{' '}
-          <button
-            onClick={onViewWheel}
-            style={{
-              background: 'none', border: 'none', padding: 0,
-              fontFamily: "'Manrope', sans-serif",
-              fontSize: 11, fontWeight: 700, cursor: 'pointer',
-              color: 'var(--text-muted)',
-              textDecoration: 'underline', textUnderlineOffset: 3,
-            }}
-          >
-            {t('wheelHintLink')}
-          </button>
-        </p>
-      )}
 
       {/* ── Step label ── */}
       <div className="min-h-[20px] mb-1">

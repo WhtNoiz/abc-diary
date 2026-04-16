@@ -336,10 +336,17 @@ const EMOTIONS = [
       children: [
         { id: "costernato",   label: "Costernato"   },
         { id: "scioccato",    label: "Scioccato"    },
-      ],
-    },
-  ],
-},
+        ],
+      },
+    ],
+  },
+  {
+    id:"vuoto",
+    label: "Vuoto",
+    colors: ["#888888", "#888888", "#888888"],
+    textColors: ["#000000", "#000000", "#000000" ],
+    children: []
+  }
 ];
 
 export default EMOTIONS;
