@@ -21,15 +21,10 @@ The app follows the three-section CBT structure:
 * **B — Thoughts** — what went through your mind
 * **C — Consequences** — how you felt, what you did, and what you wish you had done differently
 
-Two views are available to identify your emotion:
-
-**Emotion Wheel** — A circular chart with three concentric rings. The innermost ring shows broad emotion categories (Angry, Happy, Sad…).
-
 **Bubble View** — The six core emotions are displayed as coloured bubbles. Tapping a bubble expands it into its sub-emotions, each shown as a smaller bubble of the same colour. Once you select one, a 1–10 intensity slider lets you rate the intensity.
 
 ## Features
 
-* Interactive Emotion Wheel with three-ring hierarchy
 * Bubble view with drill-down navigation and intensity rating
 * Italian and English
 * One-click PDF export
