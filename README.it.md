@@ -10,9 +10,9 @@ Un diario delle emozioni privato, interamente nel browser, costruito attorno al 
  
 ## Schermate
  
-| Ruota delle Emozioni | Visualizzazione a bolle |
-|:---:|:---:|
-| ![Ruota delle Emozioni](docs/wheel-it.png) | ![Visualizzazione a bolle](docs/bubble-it.png) |
+| Visualizzazione a bolle |
+|:---:|
+| ![Visualizzazione a bolle](docs/bubble-it.png) |
  
 ## Panoramica
  
@@ -21,16 +21,11 @@ L'app segue la struttura TCC a tre sezioni:
 * **A — Situazione** — cosa è successo, quando, dove e con chi
 * **B — Pensieri** — cosa ti è passato per la mente
 * **C — Conseguenze** — come ti sei sentito, cosa hai fatto e cosa avresti voluto fare diversamente
- 
-Sono disponibili due viste per identificare la tua emozione:
- 
-**Ruota delle Emozioni** — Un grafico circolare con tre anelli concentrici. L'anello più interno mostra le categorie emotive generali (Arrabbiato, Felice, Triste…). 
 
 **Visualizzazione a bolle** — Le sei emozioni principali sono mostrate come bolle colorate. Toccando una bolla questa si espande nelle sue sotto-emozioni, ciascuna rappresentata da una bolla più piccola dello stesso colore. Una volta selezionata, una scala di intensità da 1 a 10 ti permette di valutarne l'intensità.
  
 ## Funzionalità
  
-* Ruota delle Emozioni interattiva
 * Visualizzazione a bolle con navigazione drill-down e valutazione dell'intensità
 * Italiano e inglese
 * Esportazione PDF con un click
