@@ -9,10 +9,9 @@ A private, browser-based emotion diary built around the ABC model from Cognitive
 🔗 Live: [**abc-diary.vercel.app**](https://abc-diary.vercel.app)
 
 ## Screenshots
-
-| Emotion Wheel | Bubble View |
-|:---:|:---:|
-| ![Emotion Wheel](docs/wheel-en.png) | ![Bubble View](docs/bubble-en.png) |
+| Bubble View |
+|:---:|
+| ![Bubble View](docs/bubble-en.png) |
 
 ## Overview
 
